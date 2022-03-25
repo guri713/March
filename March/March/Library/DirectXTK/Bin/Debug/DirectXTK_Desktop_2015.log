@@ -1,0 +1,4 @@
+﻿  Geometry.cpp
+D:\SourceTree\hobby work\liblary\DirectXTK-master\Src\Geometry.cpp(379,25): warning C4244: '初期化中': 'double' から 'float' への変換です。データが失われる可能性があります。
+D:\SourceTree\hobby work\liblary\DirectXTK-master\Src\Geometry.cpp(380,24): warning C4244: '初期化中': 'double' から 'float' への変換です。データが失われる可能性があります。
+  DirectXTK_Desktop_2015.vcxproj -> D:\SourceTree\hobby work\liblary\DirectXTK-master\Bin\Desktop_2015\Win32\Debug\DirectXTK.lib

@@ -95,14 +95,16 @@
       <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
       <PrecompiledHeaderFile>stdafx.h</PrecompiledHeaderFile>
       <ObjectFileName>$(IntDir)</ObjectFileName>
+      <AdditionalIncludeDirectories>$(SolutionDir)March\Library\DirectXTK\Inc;$(SolutionDir)March\Library\DirectXTex\Inc</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
       <GenerateDebugInformation>DebugFull</GenerateDebugInformation>
-      <AdditionalDependencies>d3d11.lib;dxgi.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>d3d11.lib;dxgi.lib;DirectXTex.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <IncrementalLinkDatabaseFile>$(OutDir)$(TargetName).ilk</IncrementalLinkDatabaseFile>
       <ManifestFile>$(OutDir)$(TargetName)$(TargetExt).intermediate.manifest</ManifestFile>
       <LinkTimeCodeGenerationObjectFile>$(OutDir)$(TargetName).iobj</LinkTimeCodeGenerationObjectFile>
+      <AdditionalLibraryDirectories>$(SolutionDir)March\Library\DirectXTK\Bin\Debug;$(SolutionDir)March\Library\DirectXTex\Bin\Debug;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
     <BuildLog>
       <Path>$(OutDir)$(MSBuildProjectName).log</Path>
@@ -120,16 +122,18 @@
       <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
       <PrecompiledHeaderFile>stdafx.h</PrecompiledHeaderFile>
       <ObjectFileName>$(IntDir)</ObjectFileName>
+      <AdditionalIncludeDirectories>$(SolutionDir)March\Library\DirectXTK\Inc;$(SolutionDir)March\Library\DirectXTex\Inc</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
       <GenerateDebugInformation>DebugFull</GenerateDebugInformation>
-      <AdditionalDependencies>d3d11.lib;dxgi.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>d3d11.lib;dxgi.lib;DirectXTex.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <IncrementalLinkDatabaseFile>$(OutDir)$(TargetName).ilk</IncrementalLinkDatabaseFile>
       <ManifestFile>$(OutDir)$(TargetName)$(TargetExt).intermediate.manifest</ManifestFile>
       <LinkTimeCodeGenerationObjectFile>$(OutDir)$(TargetName).iobj</LinkTimeCodeGenerationObjectFile>
+      <AdditionalLibraryDirectories>$(SolutionDir)March\Library\DirectXTK\Bin\Release;$(SolutionDir)March\Library\DirectXTex\Bin\Release;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
     <BuildLog>
       <Path>$(OutDir)$(MSBuildProjectName).log</Path>
@@ -164,34 +168,43 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="DirectX.h" />
-    <ClInclude Include="window.h" />
-    <ClInclude Include="ImGui\imconfig.h" />
-    <ClInclude Include="ImGui\imgui.h" />
-    <ClInclude Include="ImGui\imgui_impl_dx11.h" />
-    <ClInclude Include="ImGui\imgui_impl_win32.h" />
-    <ClInclude Include="ImGui\imgui_info.h" />
-    <ClInclude Include="ImGui\imgui_internal.h" />
-    <ClInclude Include="ImGui\imstb_rectpack.h" />
-    <ClInclude Include="ImGui\imstb_textedit.h" />
-    <ClInclude Include="ImGui\imstb_truetype.h" />
-    <ClInclude Include="system.h" />
-    <ClInclude Include="TimeMeasure.h" />
-    <ClInclude Include="vector.h" />
+    <ClInclude Include="original engine\calculation\TimeMeasure.h" />
+    <ClInclude Include="original engine\calculation\vector.h" />
+    <ClInclude Include="original engine\ImGui\imconfig.h" />
+    <ClInclude Include="original engine\ImGui\imgui.h" />
+    <ClInclude Include="original engine\ImGui\imgui_impl_dx11.h" />
+    <ClInclude Include="original engine\ImGui\imgui_impl_win32.h" />
+    <ClInclude Include="original engine\ImGui\imgui_info.h" />
+    <ClInclude Include="original engine\ImGui\imgui_internal.h" />
+    <ClInclude Include="original engine\ImGui\imstb_rectpack.h" />
+    <ClInclude Include="original engine\ImGui\imstb_textedit.h" />
+    <ClInclude Include="original engine\ImGui\imstb_truetype.h" />
+    <ClInclude Include="original engine\main system\DirectX.h" />
+    <ClInclude Include="original engine\main system\RenderingManager.h" />
+    <ClInclude Include="original engine\main system\ResourceManager.h" />
+    <ClInclude Include="original engine\main system\shaders.h" />
+    <ClInclude Include="original engine\main system\system.h" />
+    <ClInclude Include="original engine\main system\window.h" />
+    <ClInclude Include="original engine\scene\baseScene.h" />
+    <ClInclude Include="original engine\scene\sceneManager.h" />
+    <ClInclude Include="scenes\title.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="DirectX.cpp" />
-    <ClCompile Include="window.cpp" />
-    <ClCompile Include="ImGui\imgui.cpp" />
-    <ClCompile Include="ImGui\imgui_demo.cpp" />
-    <ClCompile Include="ImGui\imgui_draw.cpp" />
-    <ClCompile Include="ImGui\imgui_impl_dx11.cpp" />
-    <ClCompile Include="ImGui\imgui_impl_win32.cpp" />
-    <ClCompile Include="ImGui\imgui_info.cpp" />
-    <ClCompile Include="ImGui\imgui_widgets.cpp" />
+    <ClCompile Include="original engine\calculation\TimeMeasure.cpp" />
+    <ClCompile Include="original engine\ImGui\imgui.cpp" />
+    <ClCompile Include="original engine\ImGui\imgui_demo.cpp" />
+    <ClCompile Include="original engine\ImGui\imgui_draw.cpp" />
+    <ClCompile Include="original engine\ImGui\imgui_impl_dx11.cpp" />
+    <ClCompile Include="original engine\ImGui\imgui_impl_win32.cpp" />
+    <ClCompile Include="original engine\ImGui\imgui_info.cpp" />
+    <ClCompile Include="original engine\ImGui\imgui_widgets.cpp" />
+    <ClCompile Include="original engine\main system\DirectX.cpp" />
+    <ClCompile Include="original engine\main system\RenderingManager.cpp" />
+    <ClCompile Include="original engine\main system\system.cpp" />
+    <ClCompile Include="original engine\main system\window.cpp" />
     <ClCompile Include="main.cpp" />
-    <ClCompile Include="system.cpp" />
-    <ClCompile Include="TimeMeasure.cpp" />
+    <ClCompile Include="original engine\scene\sceneManager.cpp" />
+    <ClCompile Include="scenes\title.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
